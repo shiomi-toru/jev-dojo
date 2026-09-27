@@ -17,7 +17,7 @@ Estimated Jev cost of sending every English sample request once in live mode: ab
 ## Get started in 5 minutes
 
 ```bash
-git clone https://github.com/tmpken/jev-dojo
+git clone https://github.com/shiomi-toru/jev-dojo
 cd jev-dojo
 npm install
 cp .env.example .env  # the place for your key later

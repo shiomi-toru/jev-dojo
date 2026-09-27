@@ -27,7 +27,7 @@ import { LANG, type Lang, t } from "../src/lib/i18n.js";
 import { runMain } from "../src/lib/print.js";
 import { chaptersFor, launch } from "./build-pdf.js";
 
-const REPO_URL = "https://github.com/tmpken/jev-dojo/blob/main";
+const REPO_URL = "https://github.com/shiomi-toru/jev-dojo/blob/main";
 
 /** book.json の中身 */
 export interface BookManifest {
@@ -79,7 +79,7 @@ export function defaultManifest(lang: Lang): BookManifest {
       lang === "ja"
         ? "Jev（TypeSafe AI の System One モデル）を級・段で学ぶ"
         : "Learn Jev (TypeSafe AI's System One model) through kyu and dan ranks",
-    author: "kenmori",
+    author: "汐見 透",
     language: lang,
     chapters: chaptersFor(lang).map((c) => ({ src: `repo:${c.file}` })),
     output: lang === "ja" ? "jev-dojo.epub" : "jev-dojo.en.epub",

@@ -14,7 +14,7 @@ APIキーを取る前に、まず手元で動くところまで進めます。
 必要なもの: Node.js（バージョンは [.nvmrc](../../.nvmrc) と `package.json` の `engines` を参照）と Git。
 
 ```bash
-git clone https://github.com/tmpken/jev-dojo
+git clone https://github.com/shiomi-toru/jev-dojo
 cd jev-dojo
 npm install
 npm run demo     # 17章分のサンプルを続けて再生。APIキー不要・費用ゼロ

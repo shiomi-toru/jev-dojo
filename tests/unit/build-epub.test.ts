@@ -61,7 +61,7 @@ describe("build-epub", () => {
     expect(out.markdown).not.toContain("freshness");
     expect(out.markdown).toContain("[6級](ch05.xhtml)");
     expect(out.markdown).toContain(
-      "(https://github.com/tmpken/jev-dojo/blob/main/src/lib/lanes.ts)",
+      "(https://github.com/shiomi-toru/jev-dojo/blob/main/src/lib/lanes.ts)",
     );
     expect(out.markdown).toContain("(https://docs.typesafe.ai/x)");
     expect(out.markdown).toContain(

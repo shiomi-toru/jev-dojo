@@ -19,7 +19,7 @@ describe("build-pdf", () => {
       known,
     );
     expect(md).toContain("(#ch-kyu-07-noul-md)");
-    expect(md).toContain("(https://github.com/tmpken/jev-dojo/blob/main/src/lib/lanes.ts)");
+    expect(md).toContain("(https://github.com/shiomi-toru/jev-dojo/blob/main/src/lib/lanes.ts)");
   });
 
   it("外部リンクはそのまま、折りたたみは開いた状態にする", () => {

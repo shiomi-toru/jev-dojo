@@ -13,10 +13,10 @@ API キーを設定していると、サンプルは本物の Jev と通信し�
 
 ### サンプルコードを手元に置く
 
-リポジトリ: [github.com/tmpken/jev-dojo](https://github.com/tmpken/jev-dojo)
+リポジトリ: [github.com/shiomi-toru/jev-dojo](https://github.com/shiomi-toru/jev-dojo)
 
 ```bash
-git clone https://github.com/tmpken/jev-dojo
+git clone https://github.com/shiomi-toru/jev-dojo
 cd jev-dojo
 npm install
 ```

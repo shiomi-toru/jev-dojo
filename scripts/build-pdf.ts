@@ -18,7 +18,7 @@ import { FIXTURES_DIR, listFixtureDirs, ROOT, readFixture } from "../src/lib/fix
 import { LANG, t } from "../src/lib/i18n.js";
 import { runMain } from "../src/lib/print.js";
 
-const REPO_URL = "https://github.com/tmpken/jev-dojo/blob/main";
+const REPO_URL = "https://github.com/shiomi-toru/jev-dojo/blob/main";
 
 /** PDF に入れる順番。英語版は docs/en/ の本文と英語の生成ページを使う */
 export function chaptersFor(lang: "ja" | "en"): { part: string; file: string }[] {
@@ -206,7 +206,7 @@ ${FONT_CSS.map((href) => `<link rel="stylesheet" href="${href}">`).join("\n")}
     ${t("コード", "Code")}: ${REPO_URL.replace("/blob/main", "")}
   </div>
   <p class="meta">
-    © 2026 kenmori. ${t("この PDF の再配布・転売はできません。", "This PDF may not be redistributed or resold.")}<br>
+    © 2026 汐見 透. ${t("この PDF の再配布・転売はできません。", "This PDF may not be redistributed or resold.")}<br>
     ${t("本教材は TypeSafe AI の公式教材ではなく、TypeSafe AI とは関係がありません。", "This is not an official TypeSafe AI course and is not affiliated with TypeSafe AI.")}<br>
     ${t("料金・レート制限・モデルなどの変わりやすい情報は、必ず公式ドキュメントで確認してください。", "Always check prices, rate limits, models and other changing facts in the official docs.")}
   </p>

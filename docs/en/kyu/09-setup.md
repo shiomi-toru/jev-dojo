@@ -14,7 +14,7 @@ There is a mode (replay) that shows answers recorded earlier, like playing back 
 You need Node.js (for the version, see [.nvmrc](../../../.nvmrc) and `engines` in `package.json`) and Git.
 
 ```bash
-git clone https://github.com/tmpken/jev-dojo
+git clone https://github.com/shiomi-toru/jev-dojo
 cd jev-dojo
 npm install
 npm run demo     # Plays the samples of 17 chapters back to back. No API key, no cost

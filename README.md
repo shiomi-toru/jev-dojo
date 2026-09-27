@@ -17,7 +17,7 @@
 ## 5分で始める
 
 ```bash
-git clone https://github.com/tmpken/jev-dojo
+git clone https://github.com/shiomi-toru/jev-dojo
 cd jev-dojo
 npm install
 npm run demo          # 記録済みの結果を再生。APIキー不要・費用ゼロ
