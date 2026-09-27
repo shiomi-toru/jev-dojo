@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "source": "live",
+    "recordedAt": "2026-09-24T05:45:06.513Z"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/v1/systemone",
+    "body": {
+      "state": "今年も楽しかったです！運営のみなさん、ありがとうございました。",
+      "questions": {
+        "isComplaint": {
+          "type": "noul",
+          "instructions": "この投稿は、運営に対する苦情や不満ですか？",
+          "criteria": {
+            "true": "困っていること・不満・改善の要望が書かれている",
+            "false": "質問・お礼・報告など、不満ではない"
+          }
+        }
+      },
+      "model": "jev-1.13.0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "x-typesafe-request-id": "req_01a0d1f234447df18069d1cb0f9a0413"
+    },
+    "body": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "isComplaint": {
+          "type": "noul",
+          "noul": 0.01
+        }
+      },
+      "usage": {
+        "input_tokens": 373,
+        "output_tokens": 22
+      }
+    }
+  }
+}

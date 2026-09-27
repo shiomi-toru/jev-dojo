@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "source": "live",
+    "recordedAt": "2026-09-24T05:45:02.805Z"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/v1/systemone",
+    "body": {
+      "state": "盆踊りは雨が降ってもやりますか？",
+      "questions": {
+        "isQuestion": {
+          "type": "noul",
+          "instructions": "この投稿は、運営への質問ですか？"
+        }
+      },
+      "model": "jev-latest"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "x-typesafe-request-id": "req_01a0d1f2250e7747b91ebf1fb29958c7"
+    },
+    "body": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "isQuestion": {
+          "type": "noul",
+          "noul": 0.52
+        }
+      },
+      "usage": {
+        "input_tokens": 299,
+        "output_tokens": 23
+      }
+    }
+  }
+}

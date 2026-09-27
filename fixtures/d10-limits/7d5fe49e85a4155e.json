@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "source": "live",
+    "recordedAt": "2026-09-24T05:46:10.903Z"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/v1/systemone",
+    "body": {
+      "state": "財布が落ちていたので、本部テントに届けておきました。",
+      "questions": {
+        "walletAtTent": {
+          "type": "noul",
+          "instructions": "財布は今、本部テントに保管されていますか？"
+        }
+      },
+      "model": "jev-1.13.0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "x-typesafe-request-id": "req_01a0d1f32fd277efbc7227a661299b98"
+    },
+    "body": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "walletAtTent": {
+          "type": "noul",
+          "noul": 0.92
+        }
+      },
+      "usage": {
+        "input_tokens": 313,
+        "output_tokens": 23
+      }
+    }
+  }
+}

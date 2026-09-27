@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "source": "live",
+    "recordedAt": "2026-09-24T05:45:05.822Z"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/v1/systemone",
+    "body": {
+      "state": "花火の音で赤ちゃんが起きてしまいました。もう少し早い時間に終わるとうれしいのですが……。",
+      "questions": {
+        "isComplaint": {
+          "type": "noul",
+          "instructions": "この投稿は、運営に対する苦情や不満ですか？",
+          "criteria": {
+            "true": "困っていること・不満・改善の要望が書かれている",
+            "false": "質問・お礼・報告など、不満ではない"
+          }
+        }
+      },
+      "model": "jev-1.13.0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "x-typesafe-request-id": "req_01a0d1f231837839bba803fae5924ea8"
+    },
+    "body": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "isComplaint": {
+          "type": "noul",
+          "noul": 0.89
+        }
+      },
+      "usage": {
+        "input_tokens": 386,
+        "output_tokens": 22
+      }
+    }
+  }
+}

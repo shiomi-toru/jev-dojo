@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "source": "live",
+    "recordedAt": "2026-09-24T05:45:42.451Z"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/v1/systemone",
+    "body": {
+      "state": "トイレの数が少なすぎます。子ども連れには本当につらいです。",
+      "questions": {
+        "intent": {
+          "type": "choice",
+          "instructions": "この投稿の書き手は、運営に何をしてほしいのですか？",
+          "criteria": {
+            "answer": "質問に答えてほしい",
+            "fix": "困りごとを直してほしい、改善してほしい",
+            "lostItem": "なくした物を探してほしい、または拾った物を届けたい",
+            "thanks": "お礼や感想を伝えたい。対応は不要",
+            "none": "運営への依頼ではない（宣伝など）"
+          }
+        },
+        "lostItemFound": {
+          "type": "choice",
+          "instructions": "この投稿が落とし物についての投稿だとしたら、書き手は物をなくした人ですか、拾った人ですか？",
+          "criteria": {
+            "lost": "なくした人",
+            "found": "拾った人、見かけた人",
+            "notApplicable": "落とし物の投稿ではない"
+          }
+        },
+        "fixNeedsStaffNow": {
+          "type": "noul",
+          "instructions": "この投稿が困りごとの報告だとしたら、スタッフが現地に行く必要がありますか？",
+          "criteria": {
+            "true": "その場で片付け・誘導・修理などが必要",
+            "false": "説明や、次回以降の改善で足りる"
+          }
+        },
+        "answerFromFaq": {
+          "type": "score",
+          "instructions": "この投稿が質問だとしたら、よくある質問（FAQ）で答えられる程度の内容ですか？",
+          "criteria": [
+            "FAQ では答えられない。個別の確認が必要",
+            "FAQ で一部は答えられる",
+            "FAQ でそのまま答えられる"
+          ]
+        }
+      },
+      "model": "jev-1.13.0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "x-typesafe-request-id": "req_01a0d1f2c0eb77118cffd7f9d5af98ff"
+    },
+    "body": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "intent": {
+          "type": "choice",
+          "choice": "fix",
+          "confidence": 1,
+          "probabilities": {
+            "lostItem": 0,
+            "answer": 0,
+            "none": 0,
+            "thanks": 0,
+            "fix": 1
+          }
+        },
+        "lostItemFound": {
+          "type": "choice",
+          "choice": "notApplicable",
+          "confidence": 1,
+          "probabilities": {
+            "found": 0,
+            "lost": 0,
+            "notApplicable": 1
+          }
+        },
+        "fixNeedsStaffNow": {
+          "type": "noul",
+          "noul": 0.24
+        },
+        "answerFromFaq": {
+          "type": "score",
+          "score": 0.21,
+          "confidence": 0.68,
+          "legend": {
+            "0": "FAQ では答えられない。個別の確認が必要",
+            "1": "FAQ で一部は答えられる",
+            "2": "FAQ でそのまま答えられる"
+          },
+          "probabilities": {
+            "0": 0.85,
+            "1": 0.08,
+            "2": 0.07
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 796,
+        "output_tokens": 138
+      }
+    }
+  }
+}

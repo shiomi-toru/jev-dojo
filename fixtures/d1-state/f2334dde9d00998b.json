@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "source": "live",
+    "recordedAt": "2026-09-24T05:45:15.414Z"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/v1/systemone",
+    "body": {
+      "state": {
+        "board": {
+          "name": "地域のお祭り掲示板",
+          "purpose": "住民が運営に質問・要望・報告を書き込む場所"
+        },
+        "post": {
+          "text": "花火の音で赤ちゃんが起きてしまいました。もう少し早い時間に終わるとうれしいのですが……。",
+          "author": "はるか"
+        }
+      },
+      "questions": {
+        "isComplaint": {
+          "type": "noul",
+          "instructions": "`post.text` は、運営に対する苦情や不満ですか？",
+          "criteria": {
+            "true": "困っていること・不満・改善の要望が書かれている。遠回しな言い方も含む",
+            "false": "質問・お礼・報告など、不満ではない"
+          }
+        }
+      },
+      "model": "jev-1.13.0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "x-typesafe-request-id": "req_01a0d1f2571271c1a56615c1e6d3aebe"
+    },
+    "body": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "isComplaint": {
+          "type": "noul",
+          "noul": 0.92
+        }
+      },
+      "usage": {
+        "input_tokens": 469,
+        "output_tokens": 22
+      }
+    }
+  }
+}
