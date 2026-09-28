@@ -2,7 +2,7 @@
 
 > 自動生成（`npm run docmap`）。手で編集しない。
 > 取得元: https://docs.typesafe.ai/llms.txt
-> 最終取得: 2026-09-26
+> 最終取得: 2026-09-28
 
 ## 章 → 公式ページ
 
