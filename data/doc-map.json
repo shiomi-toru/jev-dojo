@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-26",
+  "checkedAt": "2026-10-12",
   "source": "https://docs.typesafe.ai/llms.txt",
   "pages": [
     {
@@ -103,36 +103,6 @@
       "description": "End-to-end recipes that show TypeSafe in real problems, from a few questions to full pipelines."
     },
     {
-      "title": "Self-consistency: nouls",
-      "url": "https://docs.typesafe.ai/cookbooks/consistency_noul_cookbook.md",
-      "description": "Route uncertain probabilities to human review while keeping the underlying noul values visible."
-    },
-    {
-      "title": "Self-consistency: choices",
-      "url": "https://docs.typesafe.ai/cookbooks/consistency_choice_cookbook.md",
-      "description": "Add an uncertain outcome to moderation decisions and compare label agreement with the share of automatic actions."
-    },
-    {
-      "title": "Parallel questions",
-      "url": "https://docs.typesafe.ai/cookbooks/parallel_questions.md",
-      "description": "Runs a 13-question regulatory briefing over the GDPR Wikipedia article, showing that batching every question into one TypeSafe call is 12.2x cheaper and 10.0x faster with no change in answers."
-    },
-    {
-      "title": "Re-ranking",
-      "url": "https://docs.typesafe.ai/cookbooks/rerank_typesafe.md",
-      "description": "Builds 30-passage BM25 shortlists for 40 CLERC legal queries, then uses one TypeSafe question per query-candidate pair to raise top-1 accuracy from 5% to 18% and top-10 accuracy from 38% to 62%."
-    },
-    {
-      "title": "Line-by-line search",
-      "url": "https://docs.typesafe.ai/cookbooks/semantic_find.md",
-      "description": "Build semantic search for GitHub's Terms of Service. In one request, score 218 line ids against a plain-language query with a Choice question, and use a Noul question to check whether the document contains an answer."
-    },
-    {
-      "title": "Structure recovery",
-      "url": "https://docs.typesafe.ai/cookbooks/autoformat.md",
-      "description": "Reconstructs Markdown from plain text that lost its formatting in two requests: one stitches hard-wrapped lines back together, one classifies every block (heading, list, code, callout)."
-    },
-    {
       "title": "Function calling",
       "url": "https://docs.typesafe.ai/cookbooks/function_calling.md",
       "description": "Turns natural-language trading requests into calls to ordinary typed functions by mapping function names and closed-set arguments to confidence-aware TypeSafe questions."
@@ -143,14 +113,9 @@
       "description": "Picks at most one skill for an agent turn out of the 182 in Nous Research's Hermes catalog, using two TypeSafe requests to rank and re-check the top candidates."
     },
     {
-      "title": "Knowledge graph entity alignment",
-      "url": "https://docs.typesafe.ai/cookbooks/entity_alignment.md",
-      "description": "Decides which of 450 candidate pairs from two beer catalogues describe the same product using one Score question plus three companion Nouls that surface which fields disagree."
-    },
-    {
-      "title": "Classifying RAG passages",
-      "url": "https://docs.typesafe.ai/cookbooks/classifying_rag_passages.md",
-      "description": "Score each retrieved passage with one TypeSafe request, then decide in code which ones reach the answering model."
+      "title": "Guardrails for LLMs",
+      "url": "https://docs.typesafe.ai/cookbooks/llm_guardrails.md",
+      "description": "Screen every message going into and out of an LLM app with one TypeSafe request, thresholding hazard probabilities and severity to pass, review, block, or route."
     },
     {
       "title": "Double-checking citations",
@@ -158,9 +123,24 @@
       "description": "Catch wrong or hallucinated citations by checking against the source document. One Choice question decides whether the quote's context supports the claim."
     },
     {
-      "title": "Guardrails for LLMs",
-      "url": "https://docs.typesafe.ai/cookbooks/llm_guardrails.md",
-      "description": "Screen every message going into and out of an LLM app with one TypeSafe request, thresholding hazard probabilities and severity to pass, review, block, or route."
+      "title": "Classifying RAG passages",
+      "url": "https://docs.typesafe.ai/cookbooks/classifying_rag_passages.md",
+      "description": "Score each retrieved passage with one TypeSafe request, then decide in code which ones reach the answering model."
+    },
+    {
+      "title": "Simple memory system",
+      "url": "https://docs.typesafe.ai/cookbooks/basic_memory.md",
+      "description": "Let Jev decide which requests and answers are worth remembering, then wrap the Jev call in a small function that adds memories to later calls."
+    },
+    {
+      "title": "Hierarchical classification",
+      "url": "https://docs.typesafe.ai/cookbooks/hierarchical_classification.md",
+      "description": "Classifies documents through deep patent, retail product, biomedical, and source-code hierarchies using parallel beam search over TypeSafe Choice probabilities."
+    },
+    {
+      "title": "Classification using confidence",
+      "url": "https://docs.typesafe.ai/cookbooks/classification_using_confidence.md",
+      "description": "Classify SEC annual reports into 75 industry groups with one Choice each, then read the answer's own confidence to decide whether to report that group or the broader division above it."
     },
     {
       "title": "SDE cascade",
@@ -178,19 +158,44 @@
       "description": "Uses regexes to find candidate emails, phone numbers, and amounts, then has TypeSafe select the requested span so code can normalize a verbatim value."
     },
     {
-      "title": "Hierarchical classification",
-      "url": "https://docs.typesafe.ai/cookbooks/hierarchical_classification.md",
-      "description": "Classifies documents through deep patent, retail product, biomedical, and source-code hierarchies using parallel beam search over TypeSafe Choice probabilities."
+      "title": "Structure recovery",
+      "url": "https://docs.typesafe.ai/cookbooks/autoformat.md",
+      "description": "Reconstructs Markdown from plain text that lost its formatting in two requests: one stitches hard-wrapped lines back together, one classifies every block (heading, list, code, callout)."
+    },
+    {
+      "title": "Re-ranking",
+      "url": "https://docs.typesafe.ai/cookbooks/rerank_typesafe.md",
+      "description": "Builds 30-passage BM25 shortlists for 40 CLERC legal queries, then uses one TypeSafe question per query-candidate pair to raise top-1 accuracy from 5% to 18% and top-10 accuracy from 38% to 62%."
+    },
+    {
+      "title": "Line-by-line search",
+      "url": "https://docs.typesafe.ai/cookbooks/semantic_find.md",
+      "description": "Build semantic search for GitHub's Terms of Service. In one request, score 218 line ids against a plain-language query with a Choice question, and use a Noul question to check whether the document contains an answer."
+    },
+    {
+      "title": "Knowledge graph entity alignment",
+      "url": "https://docs.typesafe.ai/cookbooks/entity_alignment.md",
+      "description": "Decides which of 450 candidate pairs from two beer catalogues describe the same product using one Score question plus three companion Nouls that surface which fields disagree."
+    },
+    {
+      "title": "Self-consistency: choices",
+      "url": "https://docs.typesafe.ai/cookbooks/consistency_choice_cookbook.md",
+      "description": "Add an uncertain outcome to moderation decisions and compare label agreement with the share of automatic actions."
+    },
+    {
+      "title": "Self-consistency: nouls",
+      "url": "https://docs.typesafe.ai/cookbooks/consistency_noul_cookbook.md",
+      "description": "Route uncertain probabilities to human review while keeping the underlying noul values visible."
+    },
+    {
+      "title": "Parallel questions",
+      "url": "https://docs.typesafe.ai/cookbooks/parallel_questions.md",
+      "description": "Runs a 13-question regulatory briefing over the GDPR Wikipedia article, showing that batching every question into one TypeSafe call is 12.2x cheaper and 10.0x faster with no change in answers."
     },
     {
       "title": "Autoresearch feature discovery",
       "url": "https://docs.typesafe.ai/cookbooks/autoresearch_feature_discovery.md",
       "description": "Runs an autoresearch loop that proposes TypeSafe questions, converts free text into numeric features, and uses model errors to improve a supervised CatBoost regressor."
-    },
-    {
-      "title": "Classification using confidence",
-      "url": "https://docs.typesafe.ai/cookbooks/classification_using_confidence.md",
-      "description": "Classify SEC annual reports into 75 industry groups with one Choice each, then read the answer's own confidence to decide whether to report that group or the broader division above it."
     },
     {
       "title": "Demos",
