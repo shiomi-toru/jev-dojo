@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-26",
+  "checkedAt": "2026-11-02",
   "source": "https://docs.typesafe.ai/llms.txt",
   "pages": [
     {
@@ -10,7 +10,7 @@
     {
       "title": "Quick start",
       "url": "https://docs.typesafe.ai/introduction/quickstart.md",
-      "description": "Prefer to just dive in? Here's everything you need to get started immediately."
+      "description": "Get up and running with Jev in 5 minutes."
     },
     {
       "title": "Jev with coding agents",
@@ -35,7 +35,7 @@
     {
       "title": "Primitives (Questions)",
       "url": "https://docs.typesafe.ai/primitives.md",
-      "description": "The three TypeSafe question types (Choice, Score, Noul), the typed answers they return, how to choose between them, and how to ask several at once."
+      "description": "The TypeSafe question types, the typed answers they return, how to choose between them, and how to ask several at once."
     },
     {
       "title": "Choice",
@@ -53,9 +53,19 @@
       "description": "A Noul question asks the TypeSafe model to evaluate a yes/no question and return the probability that the answer is yes."
     },
     {
+      "title": "Box",
+      "url": "https://docs.typesafe.ai/primitives/box.md",
+      "description": "A Box is a System One question type for finding where something is in an image. The answer is the four edges of a box around it, as fractions of the image's width and height."
+    },
+    {
       "title": "Advanced: structure",
       "url": "https://docs.typesafe.ai/primitives/advanced.md",
       "description": "Instructions, Choice options, Score levels, and Noul criteria all accept JSON structure."
+    },
+    {
+      "title": "Images",
+      "url": "https://docs.typesafe.ai/images.md",
+      "description": "Send images in a System One request: in the state, inside a question's instructions, and as the criteria a question is judged against."
     },
     {
       "title": "Confidence",
@@ -80,7 +90,7 @@
     {
       "title": "Speculative fan-out",
       "url": "https://docs.typesafe.ai/patterns/fan-out.md",
-      "description": "Send many questions in a single call, including speculative ones, and let your code decide what's relevant."
+      "description": "Send many questions in a single request, including speculative ones, and let your code decide what's relevant."
     },
     {
       "title": "Confidence-gated routing",
@@ -103,19 +113,89 @@
       "description": "End-to-end recipes that show TypeSafe in real problems, from a few questions to full pipelines."
     },
     {
-      "title": "Self-consistency: nouls",
-      "url": "https://docs.typesafe.ai/cookbooks/consistency_noul_cookbook.md",
-      "description": "Route uncertain probabilities to human review while keeping the underlying noul values visible."
+      "title": "Function calling",
+      "url": "https://docs.typesafe.ai/cookbooks/function_calling.md",
+      "description": "Turns natural-language trading requests into calls to ordinary typed functions by mapping function names and closed-set arguments to confidence-aware TypeSafe questions."
     },
     {
-      "title": "Self-consistency: choices",
-      "url": "https://docs.typesafe.ai/cookbooks/consistency_choice_cookbook.md",
-      "description": "Add an uncertain outcome to moderation decisions and compare label agreement with the share of automatic actions."
+      "title": "Skill suggestion",
+      "url": "https://docs.typesafe.ai/cookbooks/skill_suggestion.md",
+      "description": "Picks at most one skill for an agent turn out of the 194 in Nous Research's Hermes catalog, using two TypeSafe requests to rank and re-check the top candidates."
     },
     {
-      "title": "Parallel questions",
-      "url": "https://docs.typesafe.ai/cookbooks/parallel_questions.md",
-      "description": "Runs a 13-question regulatory briefing over the GDPR Wikipedia article, showing that batching every question into one TypeSafe call is 12.2x cheaper and 10.0x faster with no change in answers."
+      "title": "Guardrails for LLMs",
+      "url": "https://docs.typesafe.ai/cookbooks/llm_guardrails.md",
+      "description": "Screens every message into and out of an LLM app with one TypeSafe request, then passes, reviews, blocks, or sends it to support by thresholds you set."
+    },
+    {
+      "title": "Double-checking citations",
+      "url": "https://docs.typesafe.ai/cookbooks/citation_check.md",
+      "description": "Catch wrong or hallucinated citations by checking against the source document. One Choice question decides whether the quote's context supports the claim."
+    },
+    {
+      "title": "Classifying RAG passages",
+      "url": "https://docs.typesafe.ai/cookbooks/classifying_rag_passages.md",
+      "description": "Score each retrieved passage with one TypeSafe request, then decide in code which ones reach the answering model."
+    },
+    {
+      "title": "Simple memory system",
+      "url": "https://docs.typesafe.ai/cookbooks/basic_memory.md",
+      "description": "Let Jev decide which requests and answers are worth remembering, then wrap the Jev call in a small function that adds memories to later calls."
+    },
+    {
+      "title": "Hierarchical classification",
+      "url": "https://docs.typesafe.ai/cookbooks/hierarchical_classification.md",
+      "description": "Classifies documents through deep patent, retail product, biomedical, and source-code hierarchies using parallel beam search over TypeSafe Choice probabilities."
+    },
+    {
+      "title": "Classification using confidence",
+      "url": "https://docs.typesafe.ai/cookbooks/classification_using_confidence.md",
+      "description": "Classify SEC annual reports into 75 industry groups with one Choice each, then read the answer's own confidence to decide whether to report that group or the broader division above it."
+    },
+    {
+      "title": "Twitch chat filter",
+      "url": "https://docs.typesafe.ai/cookbooks/twitch_chat_filter.md",
+      "description": "Hides insults, spam, and unasked-for gameplay tips in Twitch chat, blurs spoilers, and highlights questions. Each message gets one TypeSafe request with three questions, requests run concurrently, and plain rules in code turn the answers into what the viewer sees."
+    },
+    {
+      "title": "SDE cascade",
+      "url": "https://docs.typesafe.ai/cookbooks/sde_cascade.md",
+      "description": "Extracts structured data with a cheap model, checks each field with TypeSafe, and escalates to a reasoning model only when a check fires."
+    },
+    {
+      "title": "Date extraction",
+      "url": "https://docs.typesafe.ai/cookbooks/date_extraction_cookbook.md",
+      "description": "Extracts absolute and relative dates by asking TypeSafe for the parts named in a document, then resolving and validating them in code with confidence-based review."
+    },
+    {
+      "title": "Pre-parsed value extraction",
+      "url": "https://docs.typesafe.ai/cookbooks/pre_parsed_value_extraction_cookbook.md",
+      "description": "Finds candidate emails, phone numbers, and amounts with a regex, has TypeSafe pick the one you ask for, and normalizes that exact span in code."
+    },
+    {
+      "title": "Structure recovery",
+      "url": "https://docs.typesafe.ai/cookbooks/autoformat.md",
+      "description": "Reconstructs Markdown from plain text that lost its formatting in two requests: one stitches hard-wrapped lines back together, one classifies every block (heading, list, code, callout)."
+    },
+    {
+      "title": "Shopping cart",
+      "url": "https://docs.typesafe.ai/cookbooks/cart_from_primitives.md",
+      "description": "Turns a natural-language cafe order into a structured cart: a shrinking-options loop of Choice questions finds every item, then one batched request per item fills its known fields."
+    },
+    {
+      "title": "Reading a scanned vaccination record",
+      "url": "https://docs.typesafe.ai/cookbooks/reading_scanned_documents.md",
+      "description": "Find each vaccine on a scanned travel record with a Noul and a Box, read the year of each dose with a Choice that can answer unreadable, and check each dose still covers the trip in a text-only request."
+    },
+    {
+      "title": "OCR confidence and bounding boxes",
+      "url": "https://docs.typesafe.ai/cookbooks/ocr_confidence_bounding_boxes.md",
+      "description": "Check the values an OCR extractor read from invoice photos: Jev boxes each value, scores it against the page and against a crop of its box, and flags low scores for review."
+    },
+    {
+      "title": "Feeder-cam visit log",
+      "url": "https://docs.typesafe.ai/cookbooks/feeder_watch.md",
+      "description": "Send frames from bird feeder camera footage to Jev with five questions, one of them a Box that finds the bird, then use plain code to turn the answers into a visit log per species."
     },
     {
       "title": "Re-ranking",
@@ -128,69 +208,34 @@
       "description": "Build semantic search for GitHub's Terms of Service. In one request, score 218 line ids against a plain-language query with a Choice question, and use a Noul question to check whether the document contains an answer."
     },
     {
-      "title": "Structure recovery",
-      "url": "https://docs.typesafe.ai/cookbooks/autoformat.md",
-      "description": "Reconstructs Markdown from plain text that lost its formatting in two requests: one stitches hard-wrapped lines back together, one classifies every block (heading, list, code, callout)."
-    },
-    {
-      "title": "Function calling",
-      "url": "https://docs.typesafe.ai/cookbooks/function_calling.md",
-      "description": "Turns natural-language trading requests into calls to ordinary typed functions by mapping function names and closed-set arguments to confidence-aware TypeSafe questions."
-    },
-    {
-      "title": "Skill suggestion",
-      "url": "https://docs.typesafe.ai/cookbooks/skill_suggestion.md",
-      "description": "Picks at most one skill for an agent turn out of the 182 in Nous Research's Hermes catalog, using two TypeSafe requests to rank and re-check the top candidates."
-    },
-    {
       "title": "Knowledge graph entity alignment",
       "url": "https://docs.typesafe.ai/cookbooks/entity_alignment.md",
       "description": "Decides which of 450 candidate pairs from two beer catalogues describe the same product using one Score question plus three companion Nouls that surface which fields disagree."
     },
     {
-      "title": "Classifying RAG passages",
-      "url": "https://docs.typesafe.ai/cookbooks/classifying_rag_passages.md",
-      "description": "Score each retrieved passage with one TypeSafe request, then decide in code which ones reach the answering model."
+      "title": "Intelliprompter",
+      "url": "https://docs.typesafe.ai/cookbooks/intelliprompter.md",
+      "description": "Tick off a presenter's notes as they speak: TypeSafe scores the live transcript against each note not yet covered, and a note stays ticked once its score passes the threshold."
     },
     {
-      "title": "Double-checking citations",
-      "url": "https://docs.typesafe.ai/cookbooks/citation_check.md",
-      "description": "Catch wrong or hallucinated citations by checking against the source document. One Choice question decides whether the quote's context supports the claim."
+      "title": "Self-consistency: choices",
+      "url": "https://docs.typesafe.ai/cookbooks/consistency_choice_cookbook.md",
+      "description": "Add an uncertain outcome to moderation decisions and compare label agreement with the share of automatic actions."
     },
     {
-      "title": "Guardrails for LLMs",
-      "url": "https://docs.typesafe.ai/cookbooks/llm_guardrails.md",
-      "description": "Screen every message going into and out of an LLM app with one TypeSafe request, thresholding hazard probabilities and severity to pass, review, block, or route."
+      "title": "Self-consistency: nouls",
+      "url": "https://docs.typesafe.ai/cookbooks/consistency_noul_cookbook.md",
+      "description": "Route uncertain probabilities to human review while keeping the underlying noul values visible."
     },
     {
-      "title": "SDE cascade",
-      "url": "https://docs.typesafe.ai/cookbooks/sde_cascade.md",
-      "description": "Uses a 2-stage structured-data-extraction cascade (mini → verify → reasoning) to get most of the quality of a big reasoning model at a fraction of the cost."
-    },
-    {
-      "title": "Date extraction",
-      "url": "https://docs.typesafe.ai/cookbooks/date_extraction_cookbook.md",
-      "description": "Extracts absolute and relative dates by asking TypeSafe for the parts named in a document, then resolving and validating them in code with confidence-based review."
-    },
-    {
-      "title": "Pre-parsed value extraction",
-      "url": "https://docs.typesafe.ai/cookbooks/pre_parsed_value_extraction_cookbook.md",
-      "description": "Uses regexes to find candidate emails, phone numbers, and amounts, then has TypeSafe select the requested span so code can normalize a verbatim value."
-    },
-    {
-      "title": "Hierarchical classification",
-      "url": "https://docs.typesafe.ai/cookbooks/hierarchical_classification.md",
-      "description": "Classifies documents through deep patent, retail product, biomedical, and source-code hierarchies using parallel beam search over TypeSafe Choice probabilities."
+      "title": "Parallel questions",
+      "url": "https://docs.typesafe.ai/cookbooks/parallel_questions.md",
+      "description": "Runs a 13-question regulatory briefing over the GDPR Wikipedia article, showing that batching every question into one TypeSafe call is 12.2x cheaper and 10.0x faster with no change in answers."
     },
     {
       "title": "Autoresearch feature discovery",
       "url": "https://docs.typesafe.ai/cookbooks/autoresearch_feature_discovery.md",
       "description": "Runs an autoresearch loop that proposes TypeSafe questions, converts free text into numeric features, and uses model errors to improve a supervised CatBoost regressor."
-    },
-    {
-      "title": "Classification using confidence",
-      "url": "https://docs.typesafe.ai/cookbooks/classification_using_confidence.md",
-      "description": "Classify SEC annual reports into 75 industry groups with one Choice each, then read the answer's own confidence to decide whether to report that group or the broader division above it."
     },
     {
       "title": "Demos",
@@ -208,11 +253,6 @@
       "description": ""
     },
     {
-      "title": "API reference",
-      "url": "https://docs.typesafe.ai/api.md",
-      "description": "Full HTTP API reference for the TypeSafe evaluation endpoint."
-    },
-    {
       "title": "Agent skill",
       "url": "https://docs.typesafe.ai/agent-skill.md",
       "description": "Drop-in skill for Claude Code, Codex, and other agent environments."
@@ -228,6 +268,21 @@
       "description": "Jev isn't perfect. Here are some jagged edges we are aware of with jev-1.13. Many of these will be fixed in later versions."
     },
     {
+      "title": "System One",
+      "url": "https://docs.typesafe.ai/api/system-one.md",
+      "description": "Answer one or more questions about the content supplied in `state`."
+    },
+    {
+      "title": "List models",
+      "url": "https://docs.typesafe.ai/api/list-models.md",
+      "description": "List the models and aliases available to the authenticated account."
+    },
+    {
+      "title": "Request rules and errors",
+      "url": "https://docs.typesafe.ai/api/errors.md",
+      "description": "Request limits, compression, and HTTP status codes"
+    },
+    {
       "title": "Client SDKs",
       "url": "https://docs.typesafe.ai/sdk.md",
       "description": "Install a TypeSafe client SDK and use typed questions and answers in your application."
@@ -238,9 +293,14 @@
       "description": "Install the TypeSafe Python SDK and get started with asynchronous or synchronous API calls."
     },
     {
-      "title": "Usage",
-      "url": "https://docs.typesafe.ai/sdk/python/usage.md",
+      "title": "Basic usage",
+      "url": "https://docs.typesafe.ai/sdk/python/usage/basic.md",
       "description": "Guides and patterns for working with the TypeSafe Python SDK."
+    },
+    {
+      "title": "Advanced usage",
+      "url": "https://docs.typesafe.ai/sdk/python/usage/advanced.md",
+      "description": "Performance tuning, logging, and forward compatibility for the TypeSafe Python SDK."
     },
     {
       "title": "Changelog",
@@ -266,6 +326,11 @@
       "title": "Questions",
       "url": "https://docs.typesafe.ai/sdk/python/api/types/questions.md",
       "description": "Provide state and ask yes/no, choice, and score questions using objects or dictionaries."
+    },
+    {
+      "title": "Assets",
+      "url": "https://docs.typesafe.ai/sdk/python/api/types/assets.md",
+      "description": "Attach assets to System One requests and reference them from request content."
     },
     {
       "title": "Answers and responses",
@@ -343,6 +408,11 @@
       "description": ""
     },
     {
+      "title": "Class: Image",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/classes/Image.md",
+      "description": ""
+    },
+    {
       "title": "Class: InternalServerError",
       "url": "https://docs.typesafe.ai/sdk/javascript/api/classes/InternalServerError.md",
       "description": ""
@@ -375,6 +445,21 @@
     {
       "title": "Class: UnprocessableEntityError",
       "url": "https://docs.typesafe.ai/sdk/javascript/api/classes/UnprocessableEntityError.md",
+      "description": ""
+    },
+    {
+      "title": "Interface: BoxCoordinates",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/BoxCoordinates.md",
+      "description": ""
+    },
+    {
+      "title": "Interface: BoxQuestion",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/BoxQuestion.md",
+      "description": ""
+    },
+    {
+      "title": "Interface: BoxResponse",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/BoxResponse.md",
       "description": ""
     },
     {
@@ -443,13 +528,13 @@
       "description": ""
     },
     {
-      "title": "Interface: SystemOneRequestPayload",
-      "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/SystemOneRequestPayload.md",
+      "title": "Interface: SystemOneResult<Q>",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/SystemOneResult.md",
       "description": ""
     },
     {
-      "title": "Interface: SystemOneResult<Q>",
-      "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/SystemOneResult.md",
+      "title": "Interface: TextWithAssets",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/interfaces/TextWithAssets.md",
       "description": ""
     },
     {
@@ -468,8 +553,23 @@
       "description": ""
     },
     {
+      "title": "Type Alias: Asset",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/Asset.md",
+      "description": ""
+    },
+    {
       "title": "Type Alias: ChoiceCriteria",
       "url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/ChoiceCriteria.md",
+      "description": ""
+    },
+    {
+      "title": "Type Alias: Compression",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/Compression.md",
+      "description": ""
+    },
+    {
+      "title": "Type Alias: ContentValue",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/ContentValue.md",
       "description": ""
     },
     {
@@ -528,6 +628,11 @@
       "description": ""
     },
     {
+      "title": "Type Alias: SentContent<T>",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/type-aliases/SentContent.md",
+      "description": ""
+    },
+    {
       "title": "Variable: ENV",
       "url": "https://docs.typesafe.ai/sdk/javascript/api/variables/ENV.md",
       "description": ""
@@ -538,8 +643,28 @@
       "description": ""
     },
     {
+      "title": "Variable: noul",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/variables/noul.md",
+      "description": ""
+    },
+    {
+      "title": "Variable: score",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/variables/score.md",
+      "description": ""
+    },
+    {
       "title": "Variable: VERSION",
       "url": "https://docs.typesafe.ai/sdk/javascript/api/variables/VERSION.md",
+      "description": ""
+    },
+    {
+      "title": "Variable: withAssets",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/variables/withAssets.md",
+      "description": ""
+    },
+    {
+      "title": "Function: box()",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/functions/box.md",
       "description": ""
     },
     {
@@ -548,13 +673,13 @@
       "description": ""
     },
     {
-      "title": "Function: noul()",
-      "url": "https://docs.typesafe.ai/sdk/javascript/api/functions/noul.md",
+      "title": "Function: image()",
+      "url": "https://docs.typesafe.ai/sdk/javascript/api/functions/image.md",
       "description": ""
     },
     {
-      "title": "Function: score()",
-      "url": "https://docs.typesafe.ai/sdk/javascript/api/functions/score.md",
+      "title": "openapi",
+      "url": "https://api.typesafe.ai/openapi.json",
       "description": ""
     }
   ]
